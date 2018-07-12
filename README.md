@@ -1,6 +1,9 @@
-# React project boilerplate (WiP)
+# Budget App Demo (WiP)
 
 - react
+- redux
 - webpack
 - babel
-- sass
+- react-router
+- airbnbn date picker
+- moment.js
