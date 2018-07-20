@@ -2,12 +2,11 @@ import React from "react";
 import moment from "moment";
 import "react-dates/initialize"; //caused bug!
 import { SingleDatePicker } from "react-dates";
-import "react-dates/lib/css/_datepicker.css";
 
 // const now = moment();
 // console.log(now.format("Do MMM, YYYY"));
 
-export default class ExpenseFrom extends React.Component {
+export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
