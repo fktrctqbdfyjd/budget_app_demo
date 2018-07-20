@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "serve": "live-server public/",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json"
   },
@@ -25,7 +27,9 @@
     "eslint": "^5.0.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "jest": "^23.4.1",
+    "live-server": "^1.2.0",
     "moment": "^2.22.2",
     "node-sass": "^4.9.2",
     "normalize.css": "^8.0.0",
