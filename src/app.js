@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
-import { addExpense, removeExpense } from "./actions/expenses";
+import { startSetExpenses, removeExpense } from "./actions/expenses";
 import { setTextFilter } from "./actions/filters";
 import getVisibleExpenses from "./selectors/expenses";
 import "normalize.css";
@@ -19,9 +19,9 @@ const store = configureStore();
 //   console.log(visibleExpenses);
 // });
 
-store.dispatch(addExpense({ description: "Water bill", amount: 4000 }));
-store.dispatch(addExpense({ description: "Gas bill", createdAt: 1000 }));
-store.dispatch(addExpense({ description: "rent", amount: 5420 }));
+// store.dispatch(addExpense({ description: "Water bill", amount: 4000 }));
+// store.dispatch(addExpense({ description: "Gas bill", createdAt: 1000 }));
+// store.dispatch(addExpense({ description: "rent", amount: 5420 }));
 
 const jsx = (
   <Provider store={store}>
@@ -29,4 +29,8 @@ const jsx = (
   </Provider>
 );
 
-ReactDOM.render(jsx, document.getElementById("app"));
+ReactDOM.render(<p>loading...</p>, document.getElementById("app"));
+
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(jsx, document.getElementById("app"));
+});
